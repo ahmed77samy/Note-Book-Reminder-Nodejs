@@ -1,17 +1,22 @@
 const express = require('express');
 const { getHome } = require('./controllers/home');
-const { getLogin } = require('./controllers/login');
-const { getResetPassword } = require('./controllers/reset-password');
-const { getRegister } = require('./controllers/register');
+const { getRegister, postRegister, getLogin, postLogin, getResetPassword, logout } = require('./controllers/authentication');
+const { registerValidator, loginValidator } = require('./config/validation');
 
 const router = express.Router();
 
 router.get('/', getHome);
 
+router.get('/register', getRegister);
+
+router.post('/register', ...registerValidator, postRegister);
+
 router.get('/login', getLogin);
+
+router.post('/login', ...loginValidator, postLogin);
 
 router.get('/reset-password', getResetPassword);
 
-router.get('/register', getRegister);
+router.all('/logout', logout);
 
 module.exports = router;
