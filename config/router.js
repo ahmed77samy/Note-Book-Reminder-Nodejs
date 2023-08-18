@@ -1,7 +1,7 @@
 const express = require('express');
-const { getHome } = require('./controllers/home');
-const { getRegister, postRegister, getLogin, postLogin, getResetPassword, logout } = require('./controllers/authentication');
-const { registerValidator, loginValidator } = require('./config/validation');
+const { getHome } = require('../controllers/home');
+const { getRegister, postRegister, getLogin, postLogin, getResetPassword, logout } = require('../controllers/authentication');
+const { registerValidator, loginValidator } = require('./validation');
 
 const router = express.Router();
 

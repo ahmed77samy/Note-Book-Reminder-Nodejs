@@ -4,7 +4,7 @@ const bodyparser = require('body-parser');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 var flash = require('connect-flash');
-const router = require('./router');
+const router = require('./config/router');
 const env = require('./config/env-config');
 
 const app = express();
@@ -12,11 +12,11 @@ const BP = bodyparser.urlencoded({ extended: true });
 const STORE = new MongoDBStore({
   uri: env.DBURL,
   collection: 'sessions',
-  expires: 24*60*60*100
+  expires: 24 * 60 * 60 * 100,
 });
 const COOKIE = {
-  maxAge: 24*60*60*100
-}
+  maxAge: 24 * 60 * 60 * 100,
+};
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -27,7 +27,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: STORE,
-    cookie: COOKIE
+    cookie: COOKIE,
   })
 );
 
