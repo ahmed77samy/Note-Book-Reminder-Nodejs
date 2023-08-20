@@ -1,0 +1,91 @@
+<div class="iq-sidebar sidebar-default">
+  <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
+    <a href="/" class="header-logo">
+      <img src="./assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo" />
+      <h4 class="logo-title ml-3">NotePlus</h4>
+    </a>
+    <div class="iq-menu-bt-sidebar">
+      <i class="las la-times wrapper-menu"></i>
+    </div>
+  </div>
+  <div class="sidebar-caption dropdown">
+    <a href="#" class="iq-user-toggle d-flex align-items-center justify-content-between" id="dropdownMenuButton"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <img src="./assets/images/user/1.jpg" class="img-fluid rounded avatar-50 mr-3" alt="user" />
+      <div class="caption">
+        <h6 class="mb-0 line-height user_name_title">
+          <%= user.name %>
+        </h6>
+      </div>
+      <i class="las la-angle-down"></i>
+    </a>
+    <div class="dropdown-menu w-100 border-0 my-2" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item mb-2" href="../app/user-profile.html">
+        <i class="lar la-user-circle font-size-20 mr-1"></i>
+        <span class="mt-2">My Profile</span>
+      </a>
+      <a class="dropdown-item mb-2" href="../app/user-profile-edit.html">
+        <i class="las la-user-edit font-size-20 mr-1"></i>
+        <span>Edit Profile</span>
+      </a>
+      <a class="dropdown-item mb-2" href="../app/user-account-setting.html">
+        <i class="las la-user-cog font-size-20 mr-1"></i>
+        <span>Account Settings</span>
+      </a>
+      <a class="dropdown-item mb-3" href="../app/user-privacy-setting.html">
+        <i class="las la-user-shield font-size-20 mr-1"></i>
+        <span>Privacy Settings</span>
+      </a>
+      <hr class="my-2" />
+      <a class="dropdown-item" href="/logout">
+        <i class="las la-sign-out-alt font-size-20 mr-1"></i>
+        <span>Logout</span>
+      </a>
+    </div>
+  </div>
+  <div class="data-scrollbar" data-scroll="1">
+    <nav class="iq-sidebar-menu">
+      <ul id="iq-sidebar-toggle" class="iq-menu">
+        <li class='<%= page === "home" && "active" %>'>
+          <a href="/" class="svg-icon">
+            <i>
+              <svg class="svg-icon" id="iq-main-1" width="20" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+              </svg>
+            </i>
+            <span>Your Notes</span>
+          </a>
+          <ul id="index" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle"></ul>
+        </li>
+        <li class='<%= page === "social" && "active" %>'>
+          <a href="/social?page=1" class="svg-icon">
+            <i class="">
+              <svg width="20" class="svg-icon" id="main-n-02" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                  style="stroke-dasharray: 63, 83; stroke-dashoffset: 0"></path>
+              </svg>
+            </i>
+            <span>Social</span>
+          </a>
+        </li>
+        <li class='<%= page === "bin" && "active" %>'>
+          <a href="/bin" class="svg-icon">
+            <i>
+              <svg width="20" class="svg-icon" id="iq-main-8" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+              </svg>
+            </i>
+            <span>Bin</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="p-3"></div>
+  </div>
+</div>

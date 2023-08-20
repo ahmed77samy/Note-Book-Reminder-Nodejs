@@ -392,8 +392,10 @@ if (jQuery("#editor").length) {
       $('.ql-italic').mouseout();
   }, 2500);
 }
+
+
  // With Tooltip
- if (jQuery("#quill-toolbar1").length) {
+ if (jQuery(".quill-toolbar1").length) {
   var toolbarOptions = [
     [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
     ['bold', 'italic', 'underline'],
@@ -402,13 +404,17 @@ if (jQuery("#editor").length) {
     [{ 'indent': '-1'}, { 'indent': '+1' }],
     [{ 'direction': 'rtl' }]
   ];
-var quill = new Quill('#quill-toolbar1', {
-    modules: {
-      toolbar: toolbarOptions
-    },
-    placeholder: 'Compose an epic...',
-    theme: 'snow'
-});
+
+  jQuery(".quill-toolbar1").each((index , element) => {
+    var quill = new Quill(element, {
+        modules: {
+          toolbar: toolbarOptions
+        },
+        placeholder: 'Compose an epic...',
+        theme: 'snow'
+    });
+  });
+
 // Enable all tooltips
 $('[data-toggle="tooltip"]').tooltip();
 
@@ -418,6 +424,14 @@ setTimeout(function() {
     $('.ql-italic').mouseout();
 }, 2500);
 }
+
+
+
+
+
+
+
+
   // file upload
   $(".custom-file-input").on("change", function() {
     var fileName = $(this).val().split("\\").pop();

@@ -59,6 +59,23 @@ authModel.addNewUser = function (userdata) {
   });
 };
 
+authModel.getUser = function (userid) {
+  return new Promise((resolve , reject) => {
+    mongoose.connect(DBURL)
+    .then(() => {
+      return User.findOne({_id: userid})
+    })
+    .then((user) => {
+      mongoose.disconnect();
+      resolve(user)
+    })
+    .catch((err) => {
+      mongoose.disconnect();
+      reject(err);
+    })
+  })
+}
+
 authModel.loginUser = function (userdata) {
   return new Promise((resolve, reject) => {
     mongoose
