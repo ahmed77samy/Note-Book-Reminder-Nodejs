@@ -107,7 +107,7 @@ noteModel.deleteNoteUser = function (id, userid) {
 };
 
 noteModel.getNotePublic = function (page) {
-  let limit = 12;
+  let limit = 6;
   let skip = parseInt(page - 1) * limit;
   let limited = page * limit;
   return new Promise((resolve, reject) => {

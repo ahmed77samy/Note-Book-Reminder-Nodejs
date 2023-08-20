@@ -15,7 +15,6 @@ noteController.postNote = async (req, res) => {
     })
     .catch((err) => {
       res.redirect('/error');
-      console.log(err);
     });
 };
 
@@ -23,11 +22,9 @@ noteController.updateNote = (req, res) => {
   updateNoteUser(req.params.id, req.body)
     .then((data) => {
       res.end();
-      console.log(data);
     })
     .catch((err) => {
       res.redirect('/error');
-      console.log(err);
     });
 };
 
@@ -41,11 +38,9 @@ noteController.deleteNote = (req, res) => {
     })
     .then((data) => {
       res.end();
-      console.log(data);
     })
     .catch((err) => {
       res.redirect('/error');
-      console.log(err);
     });
 };
 

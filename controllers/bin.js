@@ -20,11 +20,9 @@ binController.deleteBin = (req, res) => {
   deleteBinUser(req.params.id, req.session.userid)
     .then((data) => {
       res.end();
-      console.log(data);
     })
     .catch((err) => {
       res.redirect('/error');
-      console.log(err);
     });
 };
 
@@ -32,11 +30,9 @@ binController.deleteAllBin = (req, res) => {
   deleteAllBinUser(req.session.userid)
     .then((data) => {
       res.end();
-      console.log(data);
     })
     .catch((err) => {
       res.redirect('/error');
-      console.log(err);
     });
 };
 
