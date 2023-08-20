@@ -1,11 +1,14 @@
+const { getUser } = require('../models/auth-models');
 const { addNewBin } = require('../models/bin-models');
 const { addNewNote, deleteNoteUser, updateNoteUser } = require('../models/note-models');
 
 const noteController = {};
 
-noteController.postNote = (req, res) => {
+noteController.postNote = async (req, res) => {
+  let user = await getUser(req.session.userid);
   req.body.created = new Date();
   req.body.userid = req.session.userid;
+  req.body.user = user;
   addNewNote(req.body)
     .then(() => {
       res.redirect('/');
@@ -31,7 +34,7 @@ noteController.updateNote = (req, res) => {
 noteController.deleteNote = (req, res) => {
   deleteNoteUser(req.params.id, req.session.userid)
     .then((data) => {
-      let bin = {...data._doc}
+      let bin = { ...data._doc };
       delete bin._id;
       delete bin.__v;
       return addNewBin(bin);

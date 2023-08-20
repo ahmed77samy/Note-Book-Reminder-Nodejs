@@ -17,6 +17,10 @@ const noteSchema = mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     require: true,
   },
+  user: {
+    type: Object,
+    require: true,
+  },
   privacy: {
     type: String,
     require: true,

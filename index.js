@@ -36,5 +36,5 @@ app.use(BP);
 app.use(flash());
 app.use(router);
 
-const PORT = 3000;
+const PORT = env.PORT;
 app.listen(PORT, () => console.log(`server is start on port ${PORT}`));
